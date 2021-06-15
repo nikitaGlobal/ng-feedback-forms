@@ -1,0 +1,14 @@
+{
+  "name": "frontend-build-environment",
+  "version": "1.0.0",
+  "author": "Nikita Menshutin",
+  "scripts": {
+    "build": "webpack --mode production --config webpack.config.js",
+    "start": "webpack --mode production --config webpack.config.js --watch"
+  },
+  "dependencies": {
+    "jslint": "^0.12.1",
+    "webpack": "^5.27.2",
+    "webpack-cli": "^4.3.1"
+  }
+}
