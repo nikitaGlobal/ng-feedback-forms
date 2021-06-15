@@ -31,5 +31,7 @@
 require __DIR__ . '/vendor/autoload.php';
 define( 'NGFEEDBACKFORMS__SLUG', 'ngfbf' );
 define( 'NGFEEDBACKFORMS__VERSION', '1.0' );
+define( 'NGFEEDBACKFORMS__JS', plugin_dir_url( __FILE__ ) . 'dist/main.js' );
 
 $cpt = new NGFeedBackForms\Model\CPT();
+add_action( 'wp_enqueue_scripts', [ 'NGFeedBackForms\Controller\Enqueue', 'enqueue' ] );
