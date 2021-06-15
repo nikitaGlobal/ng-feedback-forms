@@ -1,0 +1,19 @@
+{
+    "name": "nikitaglobal/ng-feedback-forms",
+    "description": "Feedback forms for theme developers. Use your own html.",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "NGFeedBackForms\\": "classes/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Nikita Menshutin",
+            "email": "info@nikita.global"
+        }
+    ],
+    "require": {
+        "htmlburger/carbon-fields": "^3.3"
+    }
+}
