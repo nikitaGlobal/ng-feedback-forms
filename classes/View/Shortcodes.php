@@ -34,8 +34,7 @@ class Shortcodes {
      * @return string form updated.
      */
     public function scForm( string $atts, string $content ):string {
-
-        $form = new ProcessForm( $content, $atts );
-        return $form->printForm();
+        $form = new ProcessForm( $content );
+	return $form->printForm();
     }
 }

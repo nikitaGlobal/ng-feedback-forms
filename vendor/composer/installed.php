@@ -19,6 +19,15 @@
             'reference' => 'dd5663e14c6db365323b688dbae1cfbeaf14bee7',
             'dev_requirement' => false,
         ),
+        'masterminds/html5' => array(
+            'pretty_version' => '2.7.4',
+            'version' => '2.7.4.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../masterminds/html5',
+            'aliases' => array(),
+            'reference' => '9227822783c75406cfe400984b2f095cdf03d417',
+            'dev_requirement' => false,
+        ),
         'nikitaglobal/ng-feedback-forms' => array(
             'pretty_version' => 'dev-master',
             'version' => 'dev-master',

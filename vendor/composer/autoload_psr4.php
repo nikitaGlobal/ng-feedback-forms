@@ -7,5 +7,6 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'NGFeedBackForms\\' => array($baseDir . '/classes'),
+    'Masterminds\\' => array($vendorDir . '/masterminds/html5/src'),
     'Carbon_Fields\\' => array($vendorDir . '/htmlburger/carbon-fields/core'),
 );
