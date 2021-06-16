@@ -131,5 +131,7 @@ return array(
     'Carbon_Fields\\Widget\\Widget' => $vendorDir . '/htmlburger/carbon-fields/core/Widget/Widget.php',
     'Composer\\InstalledVersions' => $vendorDir . '/composer/InstalledVersions.php',
     'NGFeedBackForms\\Controller\\Enqueue' => $baseDir . '/classes/Controller/Enqueue.php',
+    'NGFeedBackForms\\Controller\\ProcessForm' => $baseDir . '/classes/Controller/ProcessForm.php',
     'NGFeedBackForms\\Model\\CPT' => $baseDir . '/classes/Model/CPT.php',
+    'NGFeedBackForms\\View\\Shortcodes' => $baseDir . '/classes/View/Shortcodes.php',
 );

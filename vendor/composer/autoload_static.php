@@ -154,7 +154,9 @@ class ComposerStaticInit152ca4f36c870e2c3f53bcf4e5268ab2
         'Carbon_Fields\\Widget\\Widget' => __DIR__ . '/..' . '/htmlburger/carbon-fields/core/Widget/Widget.php',
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
         'NGFeedBackForms\\Controller\\Enqueue' => __DIR__ . '/../..' . '/classes/Controller/Enqueue.php',
+        'NGFeedBackForms\\Controller\\ProcessForm' => __DIR__ . '/../..' . '/classes/Controller/ProcessForm.php',
         'NGFeedBackForms\\Model\\CPT' => __DIR__ . '/../..' . '/classes/Model/CPT.php',
+        'NGFeedBackForms\\View\\Shortcodes' => __DIR__ . '/../..' . '/classes/View/Shortcodes.php',
     );
 
     public static function getInitializer(ClassLoader $loader)

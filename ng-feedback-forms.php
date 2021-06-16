@@ -34,4 +34,5 @@ define( 'NGFEEDBACKFORMS__VERSION', '1.0' );
 define( 'NGFEEDBACKFORMS__JS', plugin_dir_url( __FILE__ ) . 'dist/main.js' );
 
 $cpt = new NGFeedBackForms\Model\CPT();
+$shortcodes=new \NGFeedBackForms\View\Shortcodes();
 add_action( 'wp_enqueue_scripts', [ 'NGFeedBackForms\Controller\Enqueue', 'enqueue' ] );
