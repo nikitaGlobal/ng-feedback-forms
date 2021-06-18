@@ -32,9 +32,12 @@ class ProcessForm {
         $html5              = new HTML5( [ 'disable_html_ns' => true ] );
         $this->dom          = $html5->loadHTML( $this->form['html'] );
         $this->form['node'] = $this->dom->getElementsByTagName( 'form' )[0];
-        $this->form['id']   = (string) crc32( $this->form['html'] );
+        $this->form['id']   = $this->sign( $this->form['html'] );
     }
 
+    private function sign( $value ) {
+        return NGFEEDBACKFORMS__SLUG . crc32( serialize( $value ) );
+    }
     private function formAddNonce() {
 
         $this->createTag(
@@ -45,6 +48,26 @@ class ProcessForm {
                 'value' => wp_create_nonce( NGFEEDBACKFORMS__SLUG . $this->form['id'] ),
             ]
         );
+    }
+
+    private function formCollectFields() {
+        $tags  = [ 'input', 'select', 'textarea' ];
+        $nodes = [];
+        foreach ( $tags as $tag ) {
+            foreach ( $this->dom->getElementsByTagName( $tag ) as $el ) {
+                $name = $el->getAttribute( 'name' );
+                if ( 0 === strpos( $name, NGFEEDBACKFORMS__SLUG . '[' ) ) {
+                    continue;
+                }
+                $nodes[ $this->sign( $name ) ] = [
+                    'name'     => $name,
+                    'type'     => $el->getAttribute( 'type' ),
+                    'required' => $el->getAttribute( 'required' ),
+                ];
+                $el->setAttribute( 'name', $this->sign( $name ) );
+            }
+        }
+        $this->form['fields'] = $nodes;
     }
 
     private function createTag( $tag ) {
@@ -72,7 +95,11 @@ class ProcessForm {
     }
 
     public function printForm() {
-        return $this->form['node']->C14N();
+        $out = $this->form['node']->C14N();
+        return $out;
+    }
+    function __destruct() {
+        set_transient( $this->form['id'], serialize( $this->form ), DAY_IN_SECONDS );
     }
 }
 
